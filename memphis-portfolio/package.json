@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://OliverDunnDev.github.io/modern-portfolio",
+  "homepage": "https://OliverDunnDev.github.io/modern-portfolio.git",
   "scripts": {
     "dev": "vite",
     "lint": "eslint .",
