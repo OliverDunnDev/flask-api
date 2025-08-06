@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Global bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Floating animation for abstract shapes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Memphis floating shapes in background for all pages */
+.memphis-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.memphis-bg .shape {
+  position: absolute;
+  background: #FFD70033;
+  opacity: 0.15;
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite;
+  filter: drop-shadow(0 0 3px #FFD700aa);
+}
+
+.memphis-bg .shape:nth-child(1) {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.memphis-bg .shape:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  animation-delay: 3s;
+}
+
+.memphis-bg .shape:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 6s;
+}
+
+main {
+  padding-top: 48px;
+}

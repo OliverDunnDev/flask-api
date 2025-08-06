@@ -1,0 +1,148 @@
+.hero-container {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: #121212;
+  color: #FFD700;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+  letter-spacing: 0.05em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+.btn {
+  background-color: #FFD700;
+  color: #121212;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 10px #FFD700aa;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px #FFD700ff;
+}
+
+/* Memphis shapes */
+.memphis-shapes {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  background: #FFD700;
+  opacity: 0.15;
+  animation: float 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px #FFD700aa);
+}
+
+/* Circle */
+.shape.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+/* Triangle */
+.shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid #FFD700;
+  top: 60%;
+  left: 75%;
+  animation-delay: 2s;
+  opacity: 0.1;
+}
+
+/* Zigzag */
+.shape.zigzag {
+  width: 120px;
+  height: 30px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #FFD700,
+    #FFD700 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  top: 40%;
+  left: 40%;
+  animation-delay: 4s;
+  opacity: 0.12;
+  border-radius: 5px;
+}
+
+/* Squiggle (using SVG or CSS shape approximation) */
+.shape.squiggle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50% / 70%;
+  background: linear-gradient(45deg, #FFD700 25%, transparent 25%, transparent 50%, #FFD700 50%, #FFD700 75%, transparent 75%);
+  top: 70%;
+  left: 25%;
+  animation-delay: 6s;
+  opacity: 0.1;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-15px) translateX(15px); }
+}
+
+/* Responsive font */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+  
+  .btn {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

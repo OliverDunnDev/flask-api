@@ -1,0 +1,149 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #121212;
+  color: #FFD700;
+  box-shadow: 0 1px 6px #000000bb;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+  height: 48px; /* slim height */
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 48px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo smaller */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Nav links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 0.1rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after,
+.nav-links li:focus::after {
+  width: 100%;
+}
+
+.nav-links li:hover,
+.nav-links li:focus {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Hamburger smaller */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #FFD700;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: 1px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 48px; /* right below slim navbar */
+    right: 0;
+    background-color: #121212;
+    height: calc(100vh - 48px);
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 12px #FFD700aa;
+    border-left: 2px solid #FFD700;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.3rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Add padding-top to main content in App.css or wherever */
+main {
+  padding-top: 48px; /* so content not hidden behind navbar */
+}
